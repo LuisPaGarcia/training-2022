@@ -20,5 +20,10 @@ Este es el link del Google Classroom que utilizaremos para el material didáctic
 - Este examen nos dará un estado inicial del conocimiento de los miembros del grupo. Es importante conocer el nivel de conocimiento de todos los miembros antes de iniciar el curso. Haz [click aquí]() para iniciar el examen.
 
 ## 4. Setup requerido para el entrenamiento.
-- Veremos las herramientas que utilizaremos a lo largo del curso, además de que debemos instalarlas en nuestra computadora. Haz [click aquí]() para ver las instrucciones.
+- Veremos las herramientas que utilizaremos a lo largo del curso, además de que debemos instalarlas en nuestra computadora. Haz [click aquí](https://github.com/LuisPaGarcia/training-2022/blob/master/class-01/SETUP.md) para ver las instrucciones.
 
+
+## PPT
+
+- Overview: https://docs.google.com/presentation/d/1S9i0irJdjFc10JZ7U-PxTxdr7dxakS8rOVgHnQ1cBlk/edit#slide=id.gc6f919934_0_24
+- Introducción y Recomendaciones: https://docs.google.com/presentation/d/1Nz5esgvwzWvqzhXISyppMXXUHwFUBVV2BFOdCa-wSxo/edit?ouid=101276449356107077144&usp=slides_home&ths=true
