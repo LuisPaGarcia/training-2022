@@ -1,0 +1,48 @@
+<!-- Basic JavaScript-rendered Hello World -->
+<!-- npx serve 01 -->
+
+<!-- 🐨 Create (in HTML) a <body> with a <div> with the id of "root" -->
+<!-- 🐨 Then create a <script type="module"> for your JavaScript -->
+<!--   📜 https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script#attributes -->
+<!--   📜 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules -->
+<!--   📜 https://github.com/mdn/js-examples/tree/master/modules -->
+
+<!-- These next instructions are to be written in JavaScript in the <script> tag -->
+<!-- 🐨 Create a div -->
+<!--   💰 document.createElement('div') -->
+
+<!-- 🐨 Set the div's textContent to 'Hello World' and className to 'container' -->
+<!--   💰 div.textContent = '...' -->
+
+<!-- 🐨 Append the div to the root div using `append` -->
+<!--   💰 document.getElementById('root') -->
+<!--   📜 https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append -->
+<!-- 
+## Extra Credit
+
+### 1. 💯 generate the root node
+
+Rather than having the `root` node in the HTML, see if you can create that one
+using JavaScript as well. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<body>
+</body>
+<script type="module">
+  // Extra credit
+  var rootEl = document.createElement('div')
+  rootEl.id = "root"
+  document.body.append(rootEl)
+  // Extra credit
+
+  var divEl = document.createElement('div')
+  divEl.textContent = "Hola mundo!"
+  divEl.className = "container"
+  var rootEl = document.getElementById('root')
+  rootEl.append(divEl)
+
+</script>
+
+</html>

@@ -1,0 +1,28 @@
+<!-- Creating custom components -->
+<!-- npx serve excercise -->
+<!-- localhost:3000/04/excercise -->
+
+<body>
+  <div id="root"></div>
+  <!--
+    Agrega React, ReactDOM, y Babel a tu pagina
+    <script src="https://unpkg.com/react@17.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+  -->
+  <script type="module">
+    // Prepara este script para que haga el render correcto de 2 lineas
+    // Revisa los scripts externos, el tipo del script, y crea una funcion para 
+    // Refactorizar el codigo repetido 
+    const element = (
+      <div className="wrapper">
+        <div className="greetings">Hola Profe</div>
+        <div className="greetings">LuisPa</div>
+        <span className="greetings">Soy "Tu nombre"!</span>
+        <span className="greetings">Y acabo de aprender que React es JS con truco!</span>
+      </div>
+    )
+
+    ReactDOM.render(element, document.getElementById('root'))
+  </script>
+</body>
