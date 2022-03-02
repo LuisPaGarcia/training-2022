@@ -13,23 +13,33 @@
     }
 
     // Otra manera de hacer render de los elementos!
-    const helloComponent = message({ children: 'Hello World' })
-    const goodbyeComponent = message({ children: 'Goodbye World' })
-    const element = (
-      <div className="container">
-        { helloComponent }
-        { goodbyeComponent }
-      </div>
-    )
+    // const helloComponent = message({ children: 'Hello World' })
+    // const goodbyeComponent = message({ children: 'Goodbye World' })
+    // const element = (
+    //   <div className="container">
+    //     { helloComponent }
+    //     { goodbyeComponent }
+    //   </div>
+    // )
+
+    // Una forma de poder ver mejor las propiedades desde React Devtools
+    // const helloComponent = React.createElement(message, { children: 'Hello World' })
+    // const goodbyeComponent = React.createElement(message, { children: 'Goodbye World' })
+    // const element = (
+    //   <div className="container">
+    //     { helloComponent }
+    //     { goodbyeComponent }
+    //   </div>
+    // )
 
     // 🐨 use that function in place of the divs below with:
     // 💰 {message({children: 'Hello World'})} {message({children: 'Goodbye World'})}
-    // const element = (
-    //   <div className="container">
-    //     { message({children: 'Hello World'}) }
-    //     { message({children: 'Goodbye World'}) }
-    //   </div>
-    // )
+    const element = (
+      <div className="container">
+        { message({children: 'Hello World'}) }
+        { message({children: 'Goodbye World'}) }
+      </div>
+    )
 
     // 💯 This is only the first step to making actual React components. The rest is in the extra credit!
     ReactDOM.render(element, document.getElementById('root'))
