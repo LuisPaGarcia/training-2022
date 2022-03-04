@@ -17,6 +17,21 @@
   -->
 </body>
 <script type="module">
+  //root div
+  var rootElement = document.createElement('div');
+  rootElement.id = 'root';
+  document.body.append(rootElement);
+  //inner div
+  var innerElement = document.createElement('div');
+  innerElement.id = 'inner';
   
+  rootElement.append(innerElement);
+
+  var childElement = document.createElement('p');
+  childElement.id = 'child';
+  childElement.textContent = 'Hola Profe LuisPa!';
+
+  innerElement.append(childElement);
+
 </script>
 </html>
