@@ -1,3 +1,8 @@
+// Rendering Lists
+
+import React from "react";
+
+const allItemsSimple = ["apple", "orange", "grape", "pear"];
 const allItems = [
   { id: "apple", value: "🍎 apple" },
   { id: "orange", value: "🍊 orange" },
@@ -6,31 +11,21 @@ const allItems = [
 ];
 
 function App() {
-  const [items, setItems] = React.useState(allItems);
-
-  function addItem() {
-    const itemIds = items.map((i) => i.id);
-    setItems([...items, allItems.find((i) => !itemIds.includes(i.id))]);
-  }
-
-  function removeItem(item) {
-    setItems(items.filter((i) => i.id !== item.id));
-  }
-
   return (
     <div className="keys">
-      <button disabled={items.length >= allItems.length} onClick={addItem}>
-        add item
-      </button>
       <ul style={{ listStyle: "none", paddingLeft: 0 }}>
-        {items.map((item) => (
-          <li id={item.id}>
-            <button onClick={() => removeItem(item)}>remove</button>{" "}
-            <label htmlFor={`${item.id}-input`}>{item.value}</label>{" "}
-            <input id={`${item.id}-input`} defaultValue={item.value} />
-          </li>
-        ))}
+        {allItemsSimple.map(function (simpleItem) {
+          return <li key={simpleItem}>{simpleItem}</li>;
+        })}
+      </ul>
+      <hr></hr>
+      <ul style={{ listStyle: "none", paddingLeft: 0 }}>
+        {allItemsSimple.map(function (complexItem) {
+          return <li key={complexItem.id}>{complexItem.value}</li>;
+        })}
       </ul>
     </div>
   );
 }
+
+export default App;
