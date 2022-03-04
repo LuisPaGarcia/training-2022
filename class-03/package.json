@@ -1,0 +1,23 @@
+{
+  "name": "class-03",
+  "version": "1.0.0",
+  "description": "exercises of the class 03, telus training",
+  "scripts": {
+    "05": "npx parcel ./05/index.html --port 3005 --no-cache",
+    "06": "npx parcel ./06/index.html --port 3006 --no-cache",
+    "07": "npx parcel ./07/index.html --port 3007 --no-cache",
+    "styling-exercise": "npx parcel ./styling-exercise/index.html --port 3000 --no-cache",
+    "form-exercise": "npx parcel ./form-exercise/index.html --port 3000 --no-cache",
+    "array-exercise": "npx parcel ./array-exercise/index.html --port 3000 --no-cache"
+  },
+  "keywords": [],
+  "author": "LuisPa García - blog.luispa.dev",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "parcel": "^2.3.2"
+  }
+}
