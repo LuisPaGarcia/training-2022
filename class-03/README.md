@@ -1,5 +1,7 @@
 # Class 03
 
+Presentacion: https://docs.google.com/presentation/d/1wMZKvVvTXmLdE3yGbj9yGsSPuDBmpe4xphIfXQ4TLNI/edit?usp=sharing
+
 > Estos ejercicios estan listos para que puedas experimentar con React sin mucho esfuerzo!
 
 ## Pasos para iniciar
@@ -13,9 +15,9 @@ $ ls
 05
 06
 07
-08
-09
-10
+array-exercise
+form-exercise
+styling-exercise
 dist
 node_modules
 package-lock.json
@@ -38,10 +40,14 @@ $ npm install
 8. Ahora puedes correr los siguientes comandos para ver los ejercicios por separado.
 
 ```sh
+# Para correr los ejemplos en clase
 npm run 05
 npm run 06
 npm run 07
-npm run 08
-npm run 09
-npm run 10
+# Para correr los ejercicios
+npm run styling-exercise
+npm run form-exercise
+npm run array-exercise
 ```
+
+Presentacion: https://docs.google.com/presentation/d/1wMZKvVvTXmLdE3yGbj9yGsSPuDBmpe4xphIfXQ4TLNI/edit?usp=sharing
