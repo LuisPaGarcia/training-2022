@@ -38,60 +38,33 @@ const arrayMaestros = [
   },
   {
     nombre: "Frank Ocean",
-    color: "yellow",
+    color: "red",
   },
   {
     nombre: "Don React Yey-es",
     color: "blue",
   },
-  {
-    nombre: "LuisPa",
-  },
 ];
 
-function ItemMaestros() {
-  return arrayMaestros.map((maestroObj) => (
-    <li
-      key={maestroObj.nombre}
-      style={{
-        backgroundColor: maestroObj.color ?? "red",
-      }}
-    >
-      {maestroObj.nombre}
-    </li>
-  ));
-}
-
-function ItemEstudiantes() {
-  return (
-    arrayEstudiantes
-      // .filter((estudianteObjFilter) => {
-      //   return estudianteObjFilter.promedio > 50;
-      // })
-      .map((estudianteObj) => {
-        if (estudianteObj.promedio <= 50) {
-          return null;
-        }
-
-        return <li key={estudianteObj.nombre}>{estudianteObj.nombre}</li>;
-      })
-  );
-}
 export function App() {
-  const listaARenderizar = "maestros";
-  const listaEsEstudiante = listaARenderizar === "estudiantes";
-  console.log(listaEsEstudiante);
   return (
     <div>
-      {listaEsEstudiante ? (
-        <ul>
-          <ItemEstudiantes />
-        </ul>
-      ) : (
-        <ol>
-          <ItemMaestros />
-        </ol>
-      )}
+      <ul>
+        {arrayEstudiantes.map((estudiante) => {
+          return estudiante.asistencia ? (
+            <li key={estudiante.nombre}>{estudiante.nombre}</li>
+          ) : null;
+        })}
+      </ul>
+      <ul>
+        {arrayMaestros.map((maestro) => {
+          return (
+            <li key={maestro.nombre} style={{ color: maestro.color }}>
+              {maestro.nombre}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 }

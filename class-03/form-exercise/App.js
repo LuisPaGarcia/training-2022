@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 export function App() {
   // La funcion de handle!
+  const [nombre, setNombre] = useState("");
+
+  const handleOnChange = (event) => {
+    setNombre(event.target.value);
+  };
 
   return (
     <form>
       <label htmlFor="nombre">Nombre:</label>
-      <input id="nombre"></input>
+      <input value={nombre} onChange={handleOnChange} id="nombre"></input>
       {/* Los demas campos y el boton aqui! */}
     </form>
   );
