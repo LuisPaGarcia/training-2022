@@ -29,7 +29,9 @@ function App1() {
       <h1>App 1 - Use State (Object)</h1>
       <form>
         <input
-          onChange={handleOnChange /* Replace the handler with 2 or 3 */}
+          onChange={
+            handleOnChangeUsingFunctionRefactored /* Replace the handler with 2 or 3 */
+          }
           value={message.message}
         />
         <pre>{JSON.stringify(message, null, 4)}</pre>
@@ -49,6 +51,7 @@ function App2() {
   // 1
   const handleOnClick = (event) => {
     event.preventDefault();
+
     const arrayLastItem = messages.unshift();
     const valueToPush = arrayLastItem + 1;
     messagesSet([...messages, valueToPush]);
@@ -71,7 +74,11 @@ function App2() {
     <div>
       <h1>App 2 - Use State (array)</h1>
       <form>
-        <button onClick={handleOnClick /* Replace the handler with 2 or 3 */}>
+        <button
+          onClick={
+            handleOnClickFunctionRefactored /* Replace the handler with 2 or 3 */
+          }
+        >
           Add new item to array
         </button>
         <pre>{JSON.stringify(messages)}</pre>
@@ -163,12 +170,12 @@ function App4() {
 export default () => {
   return (
     <div>
-      <App1 />
+      {/* <App1 />
       <hr />
       <App2 />
       <hr />
       <App3 />
-      <hr />
+      <hr /> */}
       <App4 />
     </div>
   );

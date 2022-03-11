@@ -5,11 +5,18 @@ import React, { useEffect, useState } from "react";
 function App1({ initialName = "" }) {
   // 🐨 initialize the state to the value from localStorage
   // 💰 window.localStorage.getItem('name') ?? initialName
-  const [name, setName] = React.useState(initialName);
+  const [name, setName] = useState(() => {
+    return window.localStorage.getItem("name") || initialName;
+  });
 
   // 🐨 Here's where you'll use `React.useEffect`.
   // The callback should set the `name` in localStorage.
   // 💰 window.localStorage.setItem('name', name)
+
+  useEffect(() => {
+    console.log("useEffect run", name);
+    window.localStorage.setItem("name", name);
+  });
 
   function handleChange(event) {
     setName(event.target.value);
@@ -124,10 +131,10 @@ function App() {
   return (
     <div>
       <App1 />
-      <hr></hr>
+      {/* <hr></hr>
       <WrapperApp2 />
       <hr></hr>
-      <App3 />
+      <App3 /> */}
     </div>
   );
 }
