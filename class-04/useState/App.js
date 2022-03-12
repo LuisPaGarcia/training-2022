@@ -97,22 +97,25 @@ function customStateHook(initValue, increaseBy) {
     event.preventDefault();
     stateSet((oldState) => oldState + increaseBy);
   };
-  return { state, handleChange, increaseBy };
+  return { state, handleChange, increaseBy, stateSet };
 }
 
-function ComponentApp3(props) {
+function ComponentApp3({ handleChange, increaseBy, state }) {
   return (
     <div>
       <form>
-        <button onClick={props.handleChange}>+{props.increaseBy}</button>
-        <h2>{props.state}</h2>
+        <button onClick={handleChange}>+{increaseBy}</button>
+        <h2>{state}</h2>
       </form>
     </div>
   );
 }
 
 function App3() {
-  const { state, handleChange, increaseBy } = customStateHook(10, 10);
+  const { state, handleChange, increaseBy } = customStateHook(10, 5);
+  const props = customStateHook(10, 30);
+  const props2 = customStateHook(1, 3);
+  const props3 = customStateHook(90, 1);
 
   return (
     <div>
@@ -121,15 +124,15 @@ function App3() {
         <button onClick={handleChange}>+ {increaseBy}</button>
         <h2>{state}</h2>
       </form>
+      {/* // Lets reuse the custom hook */}
 
-      {/* 
-
-      // Lets reuse the custom hook
-      <ComponentApp3 {...customStateHook(0, 100)} />
-      <ComponentApp3 {...customStateHook(900, 1)} />
-      <ComponentApp3 {...customStateHook(13, 13)} /> 
-      
-      */}
+      <ComponentApp3
+        state={props.state}
+        handleChange={props.handleChange}
+        increaseBy={props.increaseBy}
+      />
+      <ComponentApp3 {...props2} />
+      <ComponentApp3 {...props3} />
     </div>
   );
 }
@@ -173,10 +176,10 @@ export default () => {
       {/* <App1 />
       <hr />
       <App2 />
-      <hr />
-      <App3 />
       <hr /> */}
-      <App4 />
+      <App3 />
+      {/* <hr />
+      <App4 /> */}
     </div>
   );
 };

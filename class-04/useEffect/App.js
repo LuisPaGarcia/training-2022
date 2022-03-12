@@ -53,7 +53,7 @@ function App2({ initialName = "" }) {
 
     // Saving the name2 everytime
     window.localStorage.setItem("name2", name);
-  }); // <--- Must add a dependency here to reduce the runs of useEffect
+  }, [name]); // <--- Must add a dependency here to reduce the runs of useEffect
 
   // Change event handler
   function handleChange(event) {
@@ -97,7 +97,7 @@ function WrapperApp2() {
 // Custom hook using state and effect
 // Needs to Starts with `use`
 function useLocalStorageState(key, defaultValue = "") {
-  const [state, setState] = React.useState(
+  const [state, setState] = useState(
     () => window.localStorage.getItem(key) || defaultValue
   );
 
@@ -110,7 +110,7 @@ function useLocalStorageState(key, defaultValue = "") {
 
 function App3({ initialName = "" }) {
   // Moving all the logic to another function to reuse it
-  const [name, setName] = useLocalStorageState("name3", initialName);
+  const [name, setName] = useLocalStorageState("lastName", initialName);
 
   function handleChange(event) {
     setName(event.target.value);
@@ -130,11 +130,11 @@ function App3({ initialName = "" }) {
 function App() {
   return (
     <div>
-      <App1 />
-      {/* <hr></hr>
-      <WrapperApp2 />
+      {/* <App1 />
       <hr></hr>
-      <App3 /> */}
+      <WrapperApp2 />
+      <hr></hr> */}
+      <App3 />
     </div>
   );
 }
