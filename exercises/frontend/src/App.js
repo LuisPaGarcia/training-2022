@@ -6,7 +6,7 @@ import PomodoroApp from "./Apps/01 Pomodoro";
 import MaskedInputApp from "./Apps/02 MaskedInput";
 import JSONtoCSV from "./Apps/03 JSONtoCSV";
 import URLShortener from "./Apps/04 URLShortener";
-import Newsletter from "./Apps/05 Newsletter";
+import OneTimeSecret from "./Apps/05 One time Secret";
 
 // Although the page does not ever refresh, notice how
 // React Router keeps the URL up to date as you navigate
@@ -17,9 +17,9 @@ import Newsletter from "./Apps/05 Newsletter";
 function App() {
   return (
     <Router>
-      <div>
-        <ul>
-          <li>
+      <div className="navigation">
+        <ul className="navigation-list">
+          <li className="navigation-list__item">
             <Link to="/">Home</Link>
           </li>
           <li>
@@ -35,11 +35,9 @@ function App() {
             <Link to="/url-shortener">URLShortener</Link>
           </li>
           <li>
-            <Link to="/newsletter-subscribe">Newsletter</Link>
+            <Link to="/one-time-secret">One Time Secret</Link>
           </li>
         </ul>
-
-        <hr />
 
         {/*
           A <Switch> looks through all its children <Route>
@@ -65,8 +63,8 @@ function App() {
           <Route exact path="/url-shortener">
             <URLShortener />
           </Route>
-          <Route exact path="/newsletter-subscribe">
-            <Newsletter />
+          <Route exact path="/one-time-secret">
+            <OneTimeSecret />
           </Route>
         </Switch>
       </div>
@@ -80,7 +78,7 @@ function App() {
 function Home() {
   return (
     <div>
-      <h2>Home</h2>
+      <h1>Home</h1>
     </div>
   );
 }
