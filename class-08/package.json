@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "Class 07, telus training",
   "scripts": {
-    "hooks-flow": "npx parcel ./hooks-flow/index.html --port 3000 --no-cache",
+    "useCallback": "npx parcel ./useCallback/index.html --port 3000 --no-cache",
     "useReducer": "npx parcel ./useReducer/index.html --port 3000 --no-cache",
-    "useRef": "npx parcel ./useRef/index.html --port 3000 --no-cache"
+    "useContext": "npx parcel ./useContext/index.html --port 3000 --no-cache"
   },
   "keywords": [],
   "author": "LuisPa García - blog.luispa.dev",
