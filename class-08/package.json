@@ -4,13 +4,15 @@
   "description": "Class 07, telus training",
   "scripts": {
     "useCallback": "npx parcel ./useCallback/index.html --port 3000 --no-cache",
-    "useReducer": "npx parcel ./useReducer/index.html --port 3000 --no-cache",
-    "useContext": "npx parcel ./useContext/index.html --port 3000 --no-cache"
+    "useContext": "npx parcel ./useContext/index.html --port 3000 --no-cache",
+    "fetch": "npx parcel ./fetch/index.html --port 3000 --no-cache",
+    "api": "node ./api/index.js"
   },
   "keywords": [],
   "author": "LuisPa García - blog.luispa.dev",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.17.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
