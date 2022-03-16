@@ -1,16 +1,13 @@
 const express = require("express");
-
+const crypto = require("crypto");
 const app = express();
 const port = 5000;
-
+/**
+ * CORS middleware
+ */
 function cors(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header(
-    "Access-Control-Allow-Headers",
-    "Origin, X-Requested-With, Content-Type, Accept, x-access-token, x-access-user, x-access-company"
-  );
-
-  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+  res.header("Access-Control-Allow-Headers", "Content-Type");
   next();
 }
 
@@ -22,15 +19,15 @@ app.get("/", (req, res) => {
   res.status(200).send("Hello World!");
 });
 
-app.post("/message/", (req, res, next) => {
-  console.log(req.body);
-  const body = { ...req.body };
-  res.status(200).json({ error: null, data: body });
-  return;
-
-  // res
-  //   .status(404)
-  //   .json({ error: "Invalid body to create redirect", data: null });
+app.post("/message/", (req, res) => {
+  if (req.body && req.body.message) {
+    res.status(200).json({
+      error: null,
+      data: { id: crypto.randomUUID(), message: req.body.message },
+    });
+    return;
+  }
+  res.status(404).json({ error: "Expected to recieve `message`", data: null });
 });
 
 app.listen(port, () => {

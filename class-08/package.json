@@ -6,7 +6,8 @@
     "useCallback": "npx parcel ./useCallback/index.html --port 3000 --no-cache",
     "useContext": "npx parcel ./useContext/index.html --port 3000 --no-cache",
     "fetch": "npx parcel ./fetch/index.html --port 3000 --no-cache",
-    "api": "node ./api/index.js"
+    "api": "npx nodemon ./api/index.js",
+    "concurrent": "npx concurrently \"npm run api\" \"npm run fetch\""
   },
   "keywords": [],
   "author": "LuisPa García - blog.luispa.dev",
