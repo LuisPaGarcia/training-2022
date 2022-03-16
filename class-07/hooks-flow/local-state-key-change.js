@@ -1,6 +1,5 @@
 // useEffect: persistent state
 // flexible localStorage hook - changing the key in localStorage
-// http://localhost:3000/isolated/examples/local-state-key-change.js
 
 import * as React from "react";
 import { useLocalStorageState } from "./utils";
