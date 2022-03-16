@@ -1,8 +1,9 @@
 import React, { useState } from "react";
+import largeArray from "./largeArray";
 // import Todos from "./Todos"
 
 const Todos = ({ todos }) => {
-  console.log("List child component render");
+  console.log("List Render!");
   return (
     <>
       <h2>My Todos</h2>
@@ -15,7 +16,7 @@ const Todos = ({ todos }) => {
 
 const App = () => {
   const [count, setCount] = useState(0);
-  const [todos, setTodos] = useState(["todo 1", "todo 2"]);
+  const [todos, setTodos] = useState(largeArray);
 
   const increment = () => {
     setCount((state) => state + 1);
@@ -23,12 +24,12 @@ const App = () => {
 
   return (
     <>
-      <Todos todos={todos} />
-      <hr />
       <div>
         Count: {count}
         <button onClick={increment}>+</button>
       </div>
+      <hr />
+      <Todos todos={todos} />
     </>
   );
 };
