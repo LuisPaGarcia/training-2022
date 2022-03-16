@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Class 07, telus training",
   "scripts": {
+    "react-memo": "npx parcel ./react-memo/index.html --port 3000 --no-cache",
     "useCallback": "npx parcel ./useCallback/index.html --port 3000 --no-cache",
     "useContext": "npx parcel ./useContext/index.html --port 3000 --no-cache",
     "fetch": "npx parcel ./fetch/index.html --port 3000 --no-cache",
