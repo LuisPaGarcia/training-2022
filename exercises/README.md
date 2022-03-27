@@ -127,8 +127,8 @@ id,name,amount,comment
 ## URL Shortener (React.js + Node.js)
 ### Especificaciones
 - Necesitamos una forma en la cual pueda acortar URLs válidas, creando una URL corta que redirija a nuestra URL original.
-- Debe existir un input que reciba un link como https://www.youtube.com/watch?v=Z-48u_uWMHY, y me devuelva un link acortado como http://localhost:5000/redirect/{hash de 5 valores aleatorios}
-- Al momento de ingresar a http://localhost:5000/redirect/{hash de 5 valores aleatorios}, debe redireccionarme a la URL original: https://www.youtube.com/watch?v=Z-48u_uWMHY
+- Debe existir un input que reciba un link como https://www.youtube.com/watch?v=Z-48u_uWMHY, y me devuelva un link acortado como http://localhost:5000/redirect/{hash de al menos 5 valores aleatorios}
+- Al momento de ingresar a http://localhost:5000/redirect/{hash de al menos 5 valores aleatorios}, debe redireccionarme a la URL original: https://www.youtube.com/watch?v=Z-48u_uWMHY
 - La app debe guardar (Solamente en memoria) logs de cuantas veces se usó el link.
 
 
