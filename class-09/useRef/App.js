@@ -3,11 +3,15 @@ import React, { useRef } from "react";
 
 function App1() {
   const inputRef = useRef(null);
-  const handleInput = () => {
+  console.log(inputRef);
+
+  const handleInput = (event) => {
+    event.preventDefault();
     console.log(inputRef.current);
     inputRef.current.value = "";
     inputRef.current.focus();
   };
+
   return (
     <div>
       <form>
