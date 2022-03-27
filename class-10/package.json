@@ -1,0 +1,23 @@
+{
+  "name": "class-10",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "fetch-api": "npx parcel ./fetch-api/index.html --port 3000 --no-cache",
+    "useCallback": "npx parcel ./useCallback/index.html --port 3000 --no-cache",
+    "useContext": "npx parcel ./useContext/index.html --port 3000 --no-cache",
+    "useLayoutEffect": "npx parcel ./useLayoutEffect/index.html --port 3000 --no-cache"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "vanilla-tilt": "^1.7.2"
+  },
+  "devDependencies": {
+    "parcel": "^2.3.2"
+  }
+}
