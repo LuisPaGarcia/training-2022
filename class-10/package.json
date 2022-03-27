@@ -7,7 +7,8 @@
     "fetch-api": "npx parcel ./fetch-api/index.html --port 3000 --no-cache",
     "useCallback": "npx parcel ./useCallback/index.html --port 3000 --no-cache",
     "useContext": "npx parcel ./useContext/index.html --port 3000 --no-cache",
-    "useLayoutEffect": "npx parcel ./useLayoutEffect/index.html --port 3000 --no-cache"
+    "useLayoutEffect": "npx parcel ./useLayoutEffect/index.html --port 3000 --no-cache",
+    "useDebugValue": "npx parcel ./useDebugValue/index.html --port 3000 --no-cache"
   },
   "keywords": [],
   "author": "",
