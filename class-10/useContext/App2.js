@@ -17,7 +17,6 @@ const CountProvider = (props) => {
 //   💰 more specifically, we need the children prop forwarded to the context provider
 
 function CountDisplay() {
-  // 🐨 get the count from useContext with the CountContext
   const [count] = React.useContext(CountContext);
   return <div>{`The current count is ${count}`}</div>;
 }

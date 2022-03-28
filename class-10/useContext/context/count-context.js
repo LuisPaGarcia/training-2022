@@ -11,7 +11,7 @@ export function useCount() {
   const context = React.useContext(CountContext);
   if (!context) {
     throw new Error(
-      "Must wrapp the context correctly for `useCounter` by using `CountProvider`"
+      "Must wrapp the context correctly for `useCount` by using `CountProvider`"
     );
   }
   return context;

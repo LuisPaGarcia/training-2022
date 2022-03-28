@@ -19,9 +19,9 @@ function App() {
     <div>
       <CountProvider>
         <CountDisplay />
-        <Counter />
         {/* Unwrap Counter */}
       </CountProvider>
+      <Counter />
     </div>
   );
 }
