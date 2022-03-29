@@ -51,7 +51,7 @@ Los 5 ejercicios que se solicitan son:
 1. Mes y año de vencimiento de la tarjeta
 1. El código de verificación de la tarjeta, o CVC.
 
-1. Datos de emergencia (Opcional)
+1. Datos de Contacto de Emergencia (Opcional, estos datos pueden ser llenados o no con un Checkbox por ejemplo. Se muestra esta parte del formulario si el usuario decide añadir datos del contacto de emergencia. Si decide llenarlos, todos estos deben ser mandatorios, si no, esta parte del form no se muestra)
 - 1. Nombres
 - 2. Primer apellido
 - 3. Segundo apellido
