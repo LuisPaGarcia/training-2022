@@ -62,7 +62,7 @@ function api() {
     .all(function (req, res, next) {
       // runs for all HTTP verbs first
       // think of it as route specific middleware!
-      console.log("middleware hit!");
+      console.log(req.method, "-", +new Date());
       next();
     })
     .get(function (req, res, next) {
