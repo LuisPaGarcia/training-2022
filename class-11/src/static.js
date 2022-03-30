@@ -10,10 +10,11 @@ function static() {
   // Middleware
   app.use(express.static(publicPath));
   // Request definition
+  const htmlFilePath = path.join(__dirname, "./public/index.html");
   app.get("*", (req, res) => {
-    const htmlFilePath = path.join(__dirname, "./public/index.html");
     res.sendFile(htmlFilePath);
   });
+  console.log({ publicPath, __dirname, htmlFilePath });
   // App listen
   app.listen(3000, () => {
     console.log("Listen on port 3000");

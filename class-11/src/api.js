@@ -1,6 +1,7 @@
 var express = require("express");
 const crypto = require("crypto");
 const birds = require("./router");
+const keys = [];
 // Serve static files
 function api() {
   // App initialization
@@ -16,7 +17,8 @@ function api() {
   app.get("/path/:hash", (req, res, next) => {
     var hash = req.params.hash; // 8db4c100-22e4-4b76-9745-961357a3ed6d
     console.log(hash);
-    res.send("2. Get request with path params " + hash);
+    keys.push(hash);
+    res.json(keys);
   });
 
   // Get request params from query http://localhost:3000/query/?utm=1234
@@ -39,21 +41,23 @@ function api() {
   app.get("/error/", (req, res, next) => {
     try {
       throw new Error("API error!");
-      // res.status(200).send("Success");
+      res.status(200);
+      res.send("Success");
     } catch (error) {
-      res.status(500).send(error.message);
+      res.status(500).send({ data: null, error: error.message });
     }
   });
 
   // Apply isolated middleware
   app.use("/middleware", (req, res, next) => {
     console.log("-- Passing to the middleware");
-    req.UUID = crypto.randomUUID(); // create
+    req.model = {}
+    req.model.UUID = crypto.randomUUID(); // create
     next();
   });
 
   app.get("/middleware", (req, res, next) => {
-    res.send(req.UUID);
+    res.send(req.model.UUID);
   });
 
   // Using same source approach
