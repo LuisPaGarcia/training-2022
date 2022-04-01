@@ -1,5 +1,5 @@
-const userService = require("../services/userServices");
-const { handleError, handleResponse } = require("../utils/helpers");
+const userService = require("../../services/userServices");
+const { handleError, handleResponse } = require("../../utils/helpers");
 function getAll(req, res) {
   userService
     .getAll()

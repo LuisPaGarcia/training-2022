@@ -133,7 +133,7 @@ id,name,amount,comment
 
 
 - Extra points 🤹🏻
-1. Crear un boton que inserte un ejemplo de input de JSON en el campo de entrada.
+1. Crear un boton que inserte un ejemplo de input de URL de ejemplo de entrada.
 1. Subir tu código a un repositorio de Github.
 1. Agrege pruebas unitarias para tus funciones (Con [Jest](https://jestjs.io/) o [Mocha](https://www.geeksforgeeks.org/unit-testing-of-node-js-application/) por ejemplo)
 1. Subir esta app a un servicio de capa gratuita como [Vercel.com](https://vercel.com/) o [Netlify.com](https://www.netlify.com/)

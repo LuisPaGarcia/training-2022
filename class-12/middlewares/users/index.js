@@ -3,10 +3,11 @@ const { handleError } = require("../../utils/helpers");
 
 function checkValues(req, res, next) {
   const user = req.body.user;
+
   if (user.fullName && typeof user.fullName === "string") {
     return next();
   }
-  return handleError(res, "Must send fullName");
+  return handleError(res, "Must send fullName as string");
 }
 
 function loggingPost(req, res, next) {
@@ -15,4 +16,4 @@ function loggingPost(req, res, next) {
   return next();
 }
 
-module.exports = [checkValues, loggingPost];
+module.exports = [loggingPost, checkValues];

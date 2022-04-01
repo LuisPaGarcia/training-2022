@@ -13,8 +13,6 @@
   "dependencies": {
     "express": "^4.17.3",
     "express-pino-logger": "^6.0.0",
-    "http-errors": "^2.0.0",
-    "method-override": "^3.0.0",
     "nodemon": "^2.0.15",
     "pino": "^6.11.3",
     "pino-pretty": "^5.0.2"
