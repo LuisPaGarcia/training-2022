@@ -8,6 +8,7 @@ import { Provider } from "react-redux";
 
 //The created store
 const store = createStore(allReducers);
+// Using the provider as a wrapper from the root
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
