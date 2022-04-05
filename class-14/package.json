@@ -1,0 +1,19 @@
+{
+  "name": "class-14",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-redux": "7.2.8",
+    "redaxios": "^0.4.1",
+    "redux": "4.1.2",
+    "redux-thunk": "^2.4.1"
+  },
+  "scripts": {
+    "redux-fetch": "npx parcel ./redux-fetch/index.html --port 3000 --no-cache"
+  },
+  "devDependencies": {
+    "parcel": "^2.3.2"
+  }
+}
