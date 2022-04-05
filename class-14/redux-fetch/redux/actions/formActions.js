@@ -27,6 +27,7 @@ export const fetchUsersRequestFail = (error) => {
   };
 };
 
+// just a helper to provoke a pause in a promise chain
 const pause = (data, waitInMs) =>
   new Promise((resolve) => {
     setTimeout(() => {
@@ -37,6 +38,7 @@ const pause = (data, waitInMs) =>
 export const fetchUsers = () => {
   // Returning a funcion?!!! Thanks to the middleware
   return (dispatch) => {
+    // Fetch has started
     dispatch(fetchUsersRequest());
 
     redaxios
@@ -46,11 +48,13 @@ export const fetchUsers = () => {
       // synthetic pause
       .then((response) => {
         const data = response.data;
+        // Fetch has concluded successfuly
         dispatch(fetchUsersRequestSuccess(data));
       })
       .catch((error) => {
         console.log(error);
         const errorMsg = error.message || "Error on fetch users";
+        // Fetch has concluded with errors
         dispatch(fetchUsersRequestFail(errorMsg));
       });
   };
