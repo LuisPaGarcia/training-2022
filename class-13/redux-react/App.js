@@ -14,6 +14,10 @@ function App() {
   const auth = useSelector((state) => state.auth);
   const dispatch = useDispatch();
 
+  const handleClickIncrement = (event) => {
+    return dispatch(increment);
+  };
+
   return (
     <div className="App">
       <h1>
@@ -21,7 +25,7 @@ function App() {
       </h1>
       <h3>Counter</h3>
       <h3>{counter}</h3>
-      <button onClick={() => dispatch(increment())}>Increase</button>
+      <button onClick={handleClickIncrement}>Increase</button>
       <button onClick={() => dispatch(reset())}>Reset</button>
       <button onClick={() => dispatch(decrement())}>Decrease</button>
 

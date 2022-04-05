@@ -55,7 +55,7 @@ let store = createStore(counterReducer);
 store.subscribe(() => {
   console.log("dispatch:", store.getState());
   // ** Descomenta esta linea, y repara el uso de redux para que funcione el counter
-  document.querySelector("#counter").innerHTML = store.getState();
+  // document.querySelector("#counter").innerHTML = store.getState();
 });
 
 // 5.
@@ -71,17 +71,3 @@ store.dispatch(decrementAction);
 // 2
 store.dispatch(resetAction);
 // 0
-
-const handleClickIncrement = () => store.dispatch(incrementAction);
-const handleClickDecrement = () => store.dispatch(decrementAction);
-const handleClickReset = () => store.dispatch(resetAction);
-
-document
-  .querySelector("#increment")
-  .addEventListener("click", handleClickIncrement, false);
-document
-  .querySelector("#decrement")
-  .addEventListener("click", handleClickDecrement, false);
-document
-  .querySelector("#reset")
-  .addEventListener("click", handleClickReset, false);
