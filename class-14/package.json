@@ -11,7 +11,8 @@
     "redux-thunk": "^2.4.1"
   },
   "scripts": {
-    "redux-fetch": "npx parcel ./redux-fetch/index.html --port 3000 --no-cache"
+    "redux-fetch": "npx parcel ./redux-fetch/index.html --port 3000 --no-cache",
+    "redux-connect": "npx parcel ./redux-connect/index.html --port 3000 --no-cache"
   },
   "devDependencies": {
     "parcel": "^2.3.2"
