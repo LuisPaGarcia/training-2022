@@ -8,15 +8,15 @@ import {
   logOut,
 } from "./redux/actions/index";
 
-function App(/*{ counter,  auth,  handleClickIncrement,  handleClickDecrement,  handleClickReset,  handleClickLogIn,  handleClickLogOut,}*/) {
-  const counter = useSelector((state) => state.counter);
-  const auth = useSelector((state) => state.auth);
-  const dispatch = useDispatch();
-
-  const handleClickIncrement = () => {
-    return dispatch(increment);
-  };
-
+function App({
+  counter,
+  auth,
+  handleClickIncrement,
+  handleClickDecrement,
+  handleClickReset,
+  handleClickLogIn,
+  handleClickLogOut,
+}) {
   return (
     <div className="App">
       <h1>
@@ -24,26 +24,16 @@ function App(/*{ counter,  auth,  handleClickIncrement,  handleClickDecrement,  
       </h1>
       <h3>Counter</h3>
       <h3>{counter}</h3>
-      <button onClick={handleClickIncrement /*handleClickIncrement*/}>
-        Increase
-      </button>
-      <button onClick={() => dispatch(reset()) /*handleClickReset*/}>
-        Reset
-      </button>
-      <button onClick={() => dispatch(decrement()) /*handleClickDecrement*/}>
-        Decrease
-      </button>
+      <button onClick={handleClickIncrement}>Increase</button>
+      <button onClick={handleClickReset}>Reset</button>
+      <button onClick={handleClickDecrement}>Decrease</button>
 
       <h2>For Logged in users only</h2>
       <p>Log in to see a secret about me</p>
       {auth ? (
-        <button onClick={() => dispatch(logOut()) /*handleClickLogOut*/}>
-          LogOut
-        </button>
+        <button onClick={handleClickLogOut}>LogOut</button>
       ) : (
-        <button onClick={() => dispatch(logIn()) /*handleClickLogIn*/}>
-          LogIn
-        </button>
+        <button onClick={handleClickLogIn}>LogIn</button>
       )}
       {auth ? (
         <div>
@@ -56,23 +46,21 @@ function App(/*{ counter,  auth,  handleClickIncrement,  handleClickDecrement,  
   );
 }
 
-// const mapToStateProps = (state) => {
-//   return {
-//     counter: state.counter,
-//     auth: state.auth,
-//   };
-// };
+const mapToStateProps = ({ counter, auth }) => {
+  return {
+    counter,
+    auth,
+  };
+};
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     handleClickIncrement: () => dispatch(increment),
-//     handleClickDecrement: () => dispatch(decrement()),
-//     handleClickReset: () => dispatch(reset()),
-//     handleClickLogIn: () => dispatch(logIn()),
-//     handleClickLogOut: () => dispatch(logIn()),
-//   };
-// };
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleClickIncrement: () => dispatch(increment),
+    handleClickDecrement: () => dispatch(decrement()),
+    handleClickReset: () => dispatch(reset()),
+    handleClickLogIn: () => dispatch(logIn()),
+    handleClickLogOut: () => dispatch(logOut()),
+  };
+};
 
-// export default connect(mapToStateProps, mapDispatchToProps)(App);
-
-export default App;
+export default connect(mapToStateProps, mapDispatchToProps)(App);
