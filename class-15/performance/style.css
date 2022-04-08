@@ -1,0 +1,18 @@
+* {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+td {
+  font-size: 12px;
+  padding: 0.5rem;
+}
+
+thead {
+  font-size: 14px;
+  font-weight: 900;
+}
+table,
+tr,
+td {
+  border: 1px black solid;
+}
