@@ -1,17 +1,20 @@
-import React, { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { fetchUsers } from './redux/actions/formActions';
+import React, { useEffect } from "react";
+import { connect } from "react-redux";
+import { fetchUsers } from "./redux/actions/formActions";
 
-function App({ fetchUsers, usersData }) {
+function App({ fetchUsersProp, usersData }) {
   useEffect(() => {
-    fetchUsers();
+    fetchUsersProp();
   }, []);
 
   return (
     <div>
       <h1>Users</h1>
+
       {usersData.loading ? (
         <h2>Loading users ...</h2>
+      ) : usersData.error ? (
+        <h2>{usersData.error}</h2>
       ) : (
         <ul>
           {usersData.users.map((user) => (
@@ -19,6 +22,7 @@ function App({ fetchUsers, usersData }) {
           ))}
         </ul>
       )}
+
       {JSON.stringify(
         {
           loading: usersData.loading,
@@ -33,6 +37,11 @@ function App({ fetchUsers, usersData }) {
 }
 
 const mapToStateProps = (state) => {
+  // {
+  //   loading: state.loading,
+  //   error: state.error,
+  //   users: state.users,
+  // }
   return {
     usersData: state,
   };
@@ -40,7 +49,7 @@ const mapToStateProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchUsers: () => dispatch(fetchUsers()),
+    fetchUsersProp: () => dispatch(fetchUsers()),
   };
 };
 
